@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace Core.Vista
 {
     interface IUsuario
     {
+        CUsuarios Usuario { get; set; }
     }
 }

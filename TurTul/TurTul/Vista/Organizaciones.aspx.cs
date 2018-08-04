@@ -4,6 +4,7 @@ using Core.Vista;
 using QRCoder;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -19,6 +20,9 @@ namespace TurTul.Vista
 
                 return Organizacion();
             } set => throw new NotImplementedException(); }
+
+        public DataSet Llenar { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         WOrganizacion organizacion;
         protected void Page_Load(object sender, EventArgs e)
         {

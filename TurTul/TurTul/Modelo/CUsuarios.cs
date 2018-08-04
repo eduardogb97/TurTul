@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Modelo
 {
-    class CUsuarios
+    public class CUsuarios
     {
         //Propiedades
         public string IdUsuario { get; set; }
