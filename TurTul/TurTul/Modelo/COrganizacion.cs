@@ -16,9 +16,5 @@ namespace Core.Modelo
         public int Oferta { get; set; }
         public byte EdoPago   { get; set; }
         public string Contraseña { get; set; }
-        public void Guardar(COrganizacion org)
-        {
-
-        }
     }
 }

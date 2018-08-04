@@ -13,5 +13,12 @@ namespace TurTul.Vista
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Session["totalShoppingAmt"] = TextBox1.Text;
+            Session["orderID"] = string.Format("{0:d7}", (DateTime.Now.Ticks / 10) % 10000000);
+            Response.Redirect("sendpayment.aspx");
+        }
     }
 }

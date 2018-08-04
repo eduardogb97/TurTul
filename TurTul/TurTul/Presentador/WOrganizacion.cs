@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 
 namespace Core.Presentador
 {
@@ -19,12 +20,14 @@ namespace Core.Presentador
             this.org = _organizacion;
             objManagerBD = new ManagerBD();
         }
-       public void Consulta(int opccion)
+       public DataSet Consulta(int opccion)
         {
+            //DataSet set;
             List<SqlParameter> lstParametros = new List<SqlParameter>();
             lstParametros.Add(new SqlParameter("@Op", SqlDbType.Int) { Value = opccion });
-            lstParametros.Add(new SqlParameter("@Rfc", SqlDbType.Int) { Value = org.newOrganization.RFC });
-            org.Llenar= new ManagerBD().GetData("Organizacion", lstParametros.ToArray());
+            lstParametros.Add(new SqlParameter("@Rfc", SqlDbType.VarChar,13) { Value = org.newOrganization.RFC });
+            DataSet set=new ManagerBD().GetData("Organizacion", lstParametros.ToArray());
+            return set;
         }
         public bool RegistroOrganizacion(int opcion)
         {
@@ -59,7 +62,7 @@ namespace Core.Presentador
             lstParametros.Add(new SqlParameter("@Qr", SqlDbType.VarChar, 50) { Value = org.newOrganization.QR });
             lstParametros.Add(new SqlParameter("@Oferta", SqlDbType.Int) { Value = org.newOrganization.Oferta });
             lstParametros.Add(new SqlParameter("@EdoPago", SqlDbType.Bit) { Value = org.newOrganization.EdoPago });
-            lstParametros.Add(new SqlParameter("@Contraseña", SqlDbType.VarChar, 20) { Value = org.newOrganization.Contraseña });
+            lstParametros.Add(new SqlParameter("@Contraseña", SqlDbType.VarChar, 10) { Value = org.newOrganization.Contraseña });
             //falta
 
             if (objManagerBD.UpdateData("Organizacion", lstParametros.ToArray()))

@@ -15,23 +15,58 @@ namespace TurTul.Vista
     {
 
         public COrganizacion newOrganization { get { return Org(); } set => throw new NotImplementedException(); }
-        public DataSet Llenar { get { return null; } set { if (value != null) {gvNegocios.DataSource = value.Tables["Organizacion"]; gvNegocios.DataBind(); } } }
+        public DataSet Llenar
+        {
+            get => throw new NotImplementedException();
+            set
+            {
+                if (value != null)
+                {
+
+                }
+            }
+        }
+        string auxiliar = "";
         WOrganizacion organizacion;
         protected void Page_Load(object sender, EventArgs e)
-        {
-           
+        {           
             organizacion = new WOrganizacion(this);
         }
         protected COrganizacion Org()
         {
             COrganizacion o = new COrganizacion();
-            o.RFC = txtBuscar.Text;
+            o.RFC = auxiliar;
+            o.Nombre = txtNombre.Text;
+            if (IsNumber(txtOferta.Text))
+                o.Oferta = int.Parse(txtOferta.Text);
+            o.TipoOrganizacion = drpTipo.SelectedItem.Text;
+            o.Ubicacion = txtUbicacion.Text;
+            o.QR = txtQr.Text;
+            o.EdoPago = 1;
+            o.Contraseña = txtContraseña.Text;
             return o;
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            organizacion.Consulta(3);
+            auxiliar = txtBuscar.Text;
+            
+            gvNegocios.DataSource= organizacion.Consulta(4);
+            gvNegocios.DataBind();
+        }
+        private bool IsNumber(string n)
+        {
+
+            try
+            {
+                int X = int.Parse(n);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
         protected void EstablecerDatos()
         {
@@ -41,6 +76,7 @@ namespace TurTul.Vista
             txtQr.Text = gvNegocios.Rows[gvNegocios.SelectedRow.RowIndex].Cells[4].Text.ToString();
             txtOferta.Text = gvNegocios.Rows[gvNegocios.SelectedRow.RowIndex].Cells[5].Text.ToString();
             txtContraseña.Text = gvNegocios.Rows[gvNegocios.SelectedRow.RowIndex].Cells[6].Text.ToString();
+            drpTipo.SelectedItem.Text= gvNegocios.Rows[gvNegocios.SelectedRow.RowIndex].Cells[2].Text.ToString();
         }
         protected void gvNegocios_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -65,6 +101,7 @@ namespace TurTul.Vista
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
+            auxiliar = txtRfc.Text;
             organizacion.UpdateOrganizacion(2);
         }
     }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdministracionNegocios.aspx.cs" Inherits="TurTul.Vista.AdministracionNegocios" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false"  CodeBehind="AdministracionNegocios.aspx.cs" Inherits="TurTul.Vista.AdministracionNegocios" %>
 
 <!DOCTYPE html>
 
@@ -6,12 +6,17 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    
 </head>
 <body>
     <form id="form1" runat="server">
         <asp:Label ID="Label1" runat="server" Text="Label">Buscar</asp:Label>
         <asp:TextBox ID="txtBuscar" runat="server"></asp:TextBox>
-        <asp:GridView ID="gvNegocios" runat="server" OnRowDataBound="gvNegocios_RowDataBound" OnSelectedIndexChanged="gvNegocios_SelectedIndexChanged"></asp:GridView>
+        <asp:GridView ID="gvNegocios" runat="server" OnRowDataBound="gvNegocios_RowDataBound" OnSelectedIndexChanged="gvNegocios_SelectedIndexChanged" AutoGenerateColumns="False" ShowHeaderWhenEmpty="true">
+        </asp:GridView>
+        
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Turismo %>" SelectCommand="SELECT * FROM [tblOrganizacion]"></asp:SqlDataSource>
+        
         <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
 
 
@@ -51,7 +56,7 @@
             </div>
             
         </div>
-        <asp:Button ID="btnEditar" runat="server" Text="Guardar" OnClick="btnEditar_Click"/>
+        <asp:Button ID="btnEditar" runat="server" Text="Editar" OnClick="btnEditar_Click"/>
     </form>
 
 
