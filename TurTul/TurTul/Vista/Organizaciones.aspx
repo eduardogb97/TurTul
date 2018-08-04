@@ -45,6 +45,8 @@
             
         </div>
         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click"/>
+
+        <asp:PlaceHolder runat="server" ID="PHQRCode"></asp:PlaceHolder>
     </form>
 </body>
 </html>

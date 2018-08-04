@@ -46,6 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="QRCoder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -188,6 +192,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Vista\Organizaciones.aspx" />
+    <Content Include="Vista\Pago.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -244,6 +249,13 @@
     </Compile>
     <Compile Include="Vista\Organizaciones.aspx.designer.cs">
       <DependentUpon>Organizaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Pago.aspx.cs">
+      <DependentUpon>Pago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Pago.aspx.designer.cs">
+      <DependentUpon>Pago.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

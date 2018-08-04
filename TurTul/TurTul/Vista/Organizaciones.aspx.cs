@@ -1,8 +1,11 @@
 ﻿using Core.Modelo;
 using Core.Presentador;
 using Core.Vista;
+using QRCoder;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -52,6 +55,37 @@ namespace TurTul.Vista
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             organizacion.RegistroOrganizacion(1);
+            GenerarQR();
+            Limpiar();
+        }
+        private void Limpiar()
+        {
+            txtRfc.Text =txtContraseña.Text=txtNombre.Text=txtUbicacion.Text=txtQr.Text=txtOferta.Text= "";
+        }
+        private void GenerarQR()
+        {
+            string rfc = txtRfc.Text;
+            string nombre = txtNombre.Text;
+            string tipo = drpTipo.SelectedItem.Text;
+            string ubicacion = txtUbicacion.Text;
+            string oferta = txtOferta.Text;
+            string code = rfc + "/" + nombre + "/" + tipo + "/" + ubicacion + "/" + oferta;
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeGenerator.QRCode qrCode = qrGenerator.CreateQrCode(code, QRCodeGenerator.ECCLevel.Q);
+            System.Web.UI.WebControls.Image imgQRCode = new System.Web.UI.WebControls.Image();
+            imgQRCode.Height = 150;
+            imgQRCode.Width = 150;
+            using (Bitmap bitmap = qrCode.GetGraphic(20))
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    byte[] byteImage = ms.ToArray();
+                    imgQRCode.ImageUrl = "data:image/png;base64," + Convert.ToBase64String(byteImage);
+
+                }
+                PHQRCode.Controls.Add(imgQRCode);
+            }
         }
     }
 }
