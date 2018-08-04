@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Modelo
 {
-    class COrganizacion
+    public class COrganizacion
     {
         public string RFC { get; set; }
         public string Nombre { get; set; }
@@ -16,5 +16,9 @@ namespace Core.Modelo
         public int Oferta { get; set; }
         public byte EdoPago   { get; set; }
         public string Contraseña { get; set; }
+        public void Guardar(COrganizacion org)
+        {
+
+        }
     }
 }
