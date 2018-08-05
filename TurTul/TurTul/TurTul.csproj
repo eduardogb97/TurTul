@@ -138,6 +138,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Carts.xml" />
+    <Content Include="App_Data\Goods.xml" />
+    <Content Include="App_Data\PaymentRequests.xml" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -162,6 +165,11 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Pago\cancel.aspx" />
+    <Content Include="Pago\Default.aspx" />
+    <Content Include="Pago\paypal.aspx" />
+    <Content Include="Pago\sendpayment.aspx" />
+    <Content Include="Pago\thanks.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -193,13 +201,10 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Vista\AdministracionNegocios.aspx" />
-    <Content Include="Vista\Cancel.aspx" />
-    <Content Include="Vista\Organizaciones.aspx" />
+    <Content Include="Vista\Negocios.aspx" />
+    <Content Include="Vista\Calificacion.aspx" />
     <Content Include="Vista\Pago.aspx" />
-    <Content Include="Vista\Paypal.aspx" />
     <Content Include="Vista\RegistroUsuarios.aspx" />
-    <Content Include="Vista\SendPayment.aspx" />
-    <Content Include="Vista\Thanks.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -215,6 +220,26 @@
     <Compile Include="Modelo\CUsuarios.cs" />
     <Compile Include="Modelo\CValoracion.cs" />
     <Compile Include="Modelo\ManagerBD.cs" />
+    <Compile Include="Pago\cancel.aspx.cs">
+      <DependentUpon>cancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pago\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pago\paypal.aspx.cs">
+      <DependentUpon>paypal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pago\sendpayment.aspx.cs">
+      <DependentUpon>sendpayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pago\thanks.aspx.cs">
+      <DependentUpon>thanks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Presentador\WLugares.cs" />
     <Compile Include="Presentador\WOrganizacion.cs" />
     <Compile Include="Presentador\WUsuario.cs" />
@@ -253,23 +278,23 @@
     <Compile Include="Vista\AdministracionNegocios.aspx.designer.cs">
       <DependentUpon>AdministracionNegocios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Cancel.aspx.cs">
-      <DependentUpon>Cancel.aspx</DependentUpon>
+    <Compile Include="Vista\Calificacion.aspx.cs">
+      <DependentUpon>Calificacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vista\Cancel.aspx.designer.cs">
-      <DependentUpon>Cancel.aspx</DependentUpon>
+    <Compile Include="Vista\Calificacion.aspx.designer.cs">
+      <DependentUpon>Calificacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\ILugares.cs" />
     <Compile Include="Vista\IOrganizacion.cs" />
     <Compile Include="Vista\IUsuario.cs" />
     <Compile Include="Vista\IValoracion.cs" />
     <Compile Include="Vista\Organizaciones.aspx.cs">
-      <DependentUpon>Organizaciones.aspx</DependentUpon>
+      <DependentUpon>Negocios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\Organizaciones.aspx.designer.cs">
-      <DependentUpon>Organizaciones.aspx</DependentUpon>
+      <DependentUpon>Negocios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Pago.aspx.cs">
       <DependentUpon>Pago.aspx</DependentUpon>
@@ -278,13 +303,6 @@
     <Compile Include="Vista\Pago.aspx.designer.cs">
       <DependentUpon>Pago.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Paypal.aspx.cs">
-      <DependentUpon>Paypal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vista\Paypal.aspx.designer.cs">
-      <DependentUpon>Paypal.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Vista\RegistroUsuarios.aspx.cs">
       <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -292,24 +310,8 @@
     <Compile Include="Vista\RegistroUsuarios.aspx.designer.cs">
       <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vista\SendPayment.aspx.cs">
-      <DependentUpon>SendPayment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vista\SendPayment.aspx.designer.cs">
-      <DependentUpon>SendPayment.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Thanks.aspx.cs">
-      <DependentUpon>Thanks.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vista\Thanks.aspx.designer.cs">
-      <DependentUpon>Thanks.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />

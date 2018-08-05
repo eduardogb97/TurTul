@@ -20,10 +20,7 @@ namespace TurTul.Vista
             get => throw new NotImplementedException();
             set
             {
-                if (value != null)
-                {
 
-                }
             }
         }
         string auxiliar = "";

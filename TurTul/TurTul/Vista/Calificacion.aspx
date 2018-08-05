@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Paypal.aspx.cs" Inherits="TurTul.Vista.Paypal" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Calificacion.aspx.cs" Inherits="TurTul.Vista.Calificacion" %>
 
 <!DOCTYPE html>
 

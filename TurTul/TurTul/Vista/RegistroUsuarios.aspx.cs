@@ -3,6 +3,7 @@ using Core.Presentador;
 using Core.Vista;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,6 +14,9 @@ namespace TurTul.Vista
     public partial class RegistroUsuarios : System.Web.UI.Page, IUsuario
     {
         public CUsuarios Usuario { get { return Nuevo(); } set => throw new NotImplementedException(); }
+
+        public DataSet Tabla { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         WUsuario usuarios;
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Thanks.aspx.cs" Inherits="TurTul.Vista.Thanks" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="thanks.aspx.cs" Inherits="thanks" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -9,8 +9,12 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        Thankyou
-   
+        <asp:Button 
+  ID="Button1" 
+  PostBackUrl="../Vista/Negocios.aspx"
+  runat="server"
+  Text="Gracias por su compra" />
+    
     </div>
     </form>
 </body>
