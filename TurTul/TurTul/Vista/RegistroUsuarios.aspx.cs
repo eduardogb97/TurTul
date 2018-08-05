@@ -26,6 +26,7 @@ namespace TurTul.Vista
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             usuarios.RegistroUsuarios(1);
+            Response.Redirect("Index.aspx");
         }
         public CUsuarios Nuevo()
         {
@@ -36,6 +37,11 @@ namespace TurTul.Vista
             us.Contraseña = txtContraseña.Text;
 
             return us;
+        }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
         }
     }
 }

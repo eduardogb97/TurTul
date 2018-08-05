@@ -141,11 +141,21 @@
     <Content Include="App_Data\Carts.xml" />
     <Content Include="App_Data\Goods.xml" />
     <Content Include="App_Data\PaymentRequests.xml" />
+    <Content Include="Content\1-col-portfolio.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Formulario\css\estilos.css" />
+    <Content Include="Content\Formulario\css\font-awesome.css" />
+    <Content Include="Content\Formulario\fondo.jpg" />
+    <Content Include="Content\Formulario\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Formulario\index.html" />
+    <Content Include="Content\Formulario\js\jquery-3.2.1.js" />
+    <Content Include="Content\Formulario\js\script.js" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Valoracion.css" />
+    <Content Include="css\jquery.gmaps.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -160,22 +170,53 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Formulario\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Formulario\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Formulario\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Formulario\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Formulario\fonts\FontAwesome.otf" />
+    <Content Include="Imagenes\índice.png" />
+    <Content Include="js\package.json" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Pago\cancel.aspx" />
-    <Content Include="Pago\Default.aspx" />
-    <Content Include="Pago\paypal.aspx" />
-    <Content Include="Pago\sendpayment.aspx" />
-    <Content Include="Pago\thanks.aspx" />
+    <Content Include="Imagenes\15949284465_4f0f21ae3e.jpg" />
+    <Content Include="Imagenes\161005-c1.jpg" />
+    <Content Include="Imagenes\270px-Huapalcalco1.jpg" />
+    <Content Include="Imagenes\43695698.jpg" />
+    <Content Include="Imagenes\9628804_csYVslgWsHXPK2JDsaemGLQb-DR1sd_euqIQwkUhEno.jpg" />
+    <Content Include="Imagenes\dcee2558cd29b9e08400469817a4a0d3_XL.jpg" />
+    <Content Include="Imagenes\el-santo-en-tulancingo-1-0.jpg" />
+    <Content Include="Imagenes\img-01.png" />
+    <Content Include="Imagenes\IMG_3141-e1524014202595-800x445.jpg" />
+    <Content Include="Imagenes\museo-del-ferrocarril-tulancingo-1.jpg" />
+    <Content Include="Imagenes\pixel_weave.png" />
+    <Content Include="Imagenes\Tutrip.png" />
+    <Content Include="js\app.js" />
+    <Content Include="js\camera.js" />
+    <Content Include="js\export.js" />
+    <Content Include="js\gulpfile.js" />
+    <Content Include="js\index.js" />
+    <Content Include="js\jquery.gmaps.js" />
+    <Content Include="js\locationpicker.jquery.js" />
+    <Content Include="js\scanner.js" />
+    <Content Include="js\zxing.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\gulpfile.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.slim.js" />
+    <Content Include="Scripts\jquery.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
@@ -201,10 +242,15 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Vista\AdministracionNegocios.aspx" />
+    <Content Include="Vista\Index.aspx" />
+    <Content Include="Vista\Lugares.aspx" />
+    <Content Include="Vista\LugaresRegistrados.aspx" />
     <Content Include="Vista\Negocios.aspx" />
     <Content Include="Vista\Calificacion.aspx" />
     <Content Include="Vista\Pago.aspx" />
+    <Content Include="Vista\Paypal.aspx" />
     <Content Include="Vista\RegistroUsuarios.aspx" />
+    <Content Include="Vista\Usuario.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -220,26 +266,6 @@
     <Compile Include="Modelo\CUsuarios.cs" />
     <Compile Include="Modelo\CValoracion.cs" />
     <Compile Include="Modelo\ManagerBD.cs" />
-    <Compile Include="Pago\cancel.aspx.cs">
-      <DependentUpon>cancel.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pago\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pago\paypal.aspx.cs">
-      <DependentUpon>paypal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pago\sendpayment.aspx.cs">
-      <DependentUpon>sendpayment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pago\thanks.aspx.cs">
-      <DependentUpon>thanks.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Presentador\WLugares.cs" />
     <Compile Include="Presentador\WOrganizacion.cs" />
     <Compile Include="Presentador\WUsuario.cs" />
@@ -286,9 +312,30 @@
       <DependentUpon>Calificacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\ILugares.cs" />
+    <Compile Include="Vista\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\IOrganizacion.cs" />
     <Compile Include="Vista\IUsuario.cs" />
     <Compile Include="Vista\IValoracion.cs" />
+    <Compile Include="Vista\Lugares.aspx.cs">
+      <DependentUpon>Lugares.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Lugares.aspx.designer.cs">
+      <DependentUpon>Lugares.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\LugaresRegistrados.aspx.cs">
+      <DependentUpon>LugaresRegistrados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\LugaresRegistrados.aspx.designer.cs">
+      <DependentUpon>LugaresRegistrados.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Organizaciones.aspx.cs">
       <DependentUpon>Negocios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -303,12 +350,26 @@
     <Compile Include="Vista\Pago.aspx.designer.cs">
       <DependentUpon>Pago.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Paypal.aspx.cs">
+      <DependentUpon>Paypal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Paypal.aspx.designer.cs">
+      <DependentUpon>Paypal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\RegistroUsuarios.aspx.cs">
       <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\RegistroUsuarios.aspx.designer.cs">
       <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Usuario.aspx.cs">
+      <DependentUpon>Usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Usuario.aspx.designer.cs">
+      <DependentUpon>Usuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

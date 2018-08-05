@@ -56,5 +56,33 @@ namespace Core.Presentador
                 }
             }
         }
+        public void Listar(int opcion)
+        {
+            bool ExistenDatos = false;
+            DataSet dtsDatos = new DataSet();
+
+            if (ExisteConexion())
+            {
+                ExistenDatos = objLugares.listarLugares(opcion, ref dtsDatos);
+                if (ExistenDatos == true)
+                    ViewLugares.DatosLugares = dtsDatos;
+                          
+            }
+            else
+            {
+                
+            }
+
+        }
+        public void EliminarLugares(int op, int IdLugar)
+        {
+            bool BolRegistro = false;
+            if (ExisteConexion())
+            {
+                BolRegistro = objLugares.EliminarLugar(op, IdLugar);
+                
+                  
+            }
+        }
     }
 }

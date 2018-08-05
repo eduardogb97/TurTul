@@ -6,37 +6,70 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="../Content/Formulario/css/estilos.css" rel="stylesheet" />
+    <link href="../Content/Formulario/css/font-awesome.css" rel="stylesheet" />
+<%--    <script src="../Content/Formulario/js/script.js"></script>--%>
+    <script src="../Content/Formulario/js/jquery-3.2.1.js"></script>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../Scripts/bootstrap.min.js"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div class="row">
-            <div class="col-md-5">
-                <asp:Label ID="Label3" runat="server" Text="Label" CssClass="control-label">Nombre</asp:Label>
+
+    <div align="center"> <img width="800px" height="300px" src="../Imagenes/Tutrip.png" /></div>
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+          <section class="form_wrap">
+
+        <section class="cantact_info">
+            <section class="info_title">
+                <span class="fa fa-user-circle"></span>
+                <h2>Registro<br>usuario</h2>
+            </section>
+        </section>
+              <form action="" runat="server" class="form_contact">
+<div class="row">
+
+                <asp:Label ID="Label3" for="names" runat="server" Text="Label" CssClass="control-label">Nombre</asp:Label>
             <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
-        </div>
+
         <div class="row">
-            <div class="col-md-5">
-                <asp:Label ID="Label4" runat="server" Text="Label" CssClass="control-label">Apellidos</asp:Label>
+
+                <asp:Label ID="Label4" for="apellidos" runat="server" Text="Label" CssClass="control-label">Apellidos</asp:Label>
             <asp:TextBox ID="txtApellidos" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
-        </div>
+ 
         <div class="row">
-            <div class="col-md-5">
-                <asp:Label ID="Label1" runat="server" Text="Label" CssClass="control-label">Usuario</asp:Label>
+
+                <asp:Label ID="Label1" for="usuario" runat="server" Text="Label" CssClass="control-label">Usuario</asp:Label>
             <asp:TextBox ID="txtIdUsuario" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-5">
-                <asp:Label ID="Label2" runat="server" Text="Label" CssClass="control-label">Contraseña</asp:Label>
+
+<div class="row">
+                <asp:Label ID="Label2" for="contraseña" runat="server" Text="Label" CssClass="control-label">Contraseña</asp:Label>
             <asp:TextBox ID="txtContraseña" runat="server" CssClass="form-control"></asp:TextBox>
-            </div>
+    </div>
             
-        </div>
         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" CssClass="btn btn-primary"/>
-    </form>
+                  <br />
+                  <br />
+                    <div align="right">
+        
+                  <asp:Button runat="server" CssClass="btn btn-default" Width="200px" Text="Regresar" OnClick="Unnamed1_Click"/>
+                        </div>
+                   </form>
+                </section>
+   
+
+  
+
+
+
+
+
+
+        </div>
+        <div class="col-md-2"></div>
 </body>
 </html>

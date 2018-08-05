@@ -18,7 +18,7 @@ namespace TurTul.Vista
         {
             Session["totalShoppingAmt"] = TextBox1.Text;
             Session["orderID"] = string.Format("{0:d7}", (DateTime.Now.Ticks / 10) % 10000000);
-            Response.Redirect("sendpayment.aspx");
+            Response.Redirect(@"C:\Users\Ded Sec\Desktop\TurTul\TurTul\TurTul\Pago\sendpayment.aspx");
         }
     }
 }

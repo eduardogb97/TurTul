@@ -26,7 +26,8 @@ namespace TurTul.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.115.148;Initial Catalog=DBTURISMO;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.116;Initial Catalog=DBTURISMO;User ID=sa;Password=Eduardo77" +
+            "")]
         public string Turismo {
             get {
                 return ((string)(this["Turismo"]));

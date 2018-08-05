@@ -36,7 +36,7 @@ namespace TurTul.Vista
             o.Nombre = txtNombre.Text;
             o.TipoOrganizacion = drpTipo.SelectedItem.Text;
             o.Ubicacion = txtUbicacion.Text;
-            o.QR = txtQr.Text;
+            //o.QR = txtQr.Text;
             o.EdoPago = 1;
             if(IsNumber(txtOferta.Text))
             o.Oferta = int.Parse(txtOferta.Text);
@@ -64,7 +64,7 @@ namespace TurTul.Vista
         }
         private void Limpiar()
         {
-            txtRfc.Text =txtContraseña.Text=txtNombre.Text=txtUbicacion.Text=txtQr.Text=txtOferta.Text= "";
+            txtRfc.Text =txtContraseña.Text=txtNombre.Text=txtUbicacion.Text=txtOferta.Text= "";
         }
         private void GenerarQR()
         {
@@ -90,6 +90,11 @@ namespace TurTul.Vista
                 }
                 PHQRCode.Controls.Add(imgQRCode);
             }
+        }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
         }
     }
 }
