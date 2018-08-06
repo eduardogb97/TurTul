@@ -204,6 +204,11 @@
     <Content Include="js\locationpicker.jquery.js" />
     <Content Include="js\scanner.js" />
     <Content Include="js\zxing.js" />
+    <Content Include="PayPal\cancel.aspx" />
+    <Content Include="PayPal\Default.aspx" />
+    <Content Include="PayPal\paypal.aspx" />
+    <Content Include="PayPal\sendpayment.aspx" />
+    <Content Include="PayPal\thanks.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -247,8 +252,6 @@
     <Content Include="Vista\LugaresRegistrados.aspx" />
     <Content Include="Vista\Negocios.aspx" />
     <Content Include="Vista\Calificacion.aspx" />
-    <Content Include="Vista\Pago.aspx" />
-    <Content Include="Vista\Paypal.aspx" />
     <Content Include="Vista\RegistroUsuarios.aspx" />
     <Content Include="Vista\Usuario.aspx" />
     <Content Include="Web.config" />
@@ -266,6 +269,26 @@
     <Compile Include="Modelo\CUsuarios.cs" />
     <Compile Include="Modelo\CValoracion.cs" />
     <Compile Include="Modelo\ManagerBD.cs" />
+    <Compile Include="PayPal\cancel.aspx.cs">
+      <DependentUpon>cancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayPal\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayPal\paypal.aspx.cs">
+      <DependentUpon>paypal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayPal\sendpayment.aspx.cs">
+      <DependentUpon>sendpayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayPal\thanks.aspx.cs">
+      <DependentUpon>thanks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Presentador\WLugares.cs" />
     <Compile Include="Presentador\WOrganizacion.cs" />
     <Compile Include="Presentador\WUsuario.cs" />
@@ -342,20 +365,6 @@
     </Compile>
     <Compile Include="Vista\Organizaciones.aspx.designer.cs">
       <DependentUpon>Negocios.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Pago.aspx.cs">
-      <DependentUpon>Pago.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vista\Pago.aspx.designer.cs">
-      <DependentUpon>Pago.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Paypal.aspx.cs">
-      <DependentUpon>Paypal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vista\Paypal.aspx.designer.cs">
-      <DependentUpon>Paypal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\RegistroUsuarios.aspx.cs">
       <DependentUpon>RegistroUsuarios.aspx</DependentUpon>

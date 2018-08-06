@@ -12,10 +12,17 @@
 
     <link href="../css/jquery.gmaps.css" rel="stylesheet" />
     <script src="../js/jquery.gmaps.js"></script>
+    <script>
+        function post() {
+            var boton = document.getElementById('<%=btnRegistrar.ClientID%>');
+            boton.click();
+        }
+    </script>
     <style>
         .gmaps{
             height:500px;
             width:100%;
+            
         }
     </style>
 </head>
@@ -37,7 +44,8 @@
                     <a class="nav-link" href="#" style="color:black;">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Paypal.aspx" style=" color:black;">Registro de empresa</a>
+                    <input id="btnRegistrarN" type="button" value="Registrar Empresa" class="nav-link" style=" color:black;" onclick="post()"/>
+                   
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" style=" color:black;" href="RegistroUsuarios.aspx">Registro Usuario</a>
@@ -48,7 +56,7 @@
             </ul>    &nbsp;&nbsp;&nbsp;
 
             <form class="form-inline" id="form1" runat="server" >
-
+                <asp:Button  ID="btnRegistrar" style="visibility:hidden" runat="server" Text="Registrar Empresa" class="nav-link" OnClick="btnRegistrar_Click" />
                 <div class="form-group">
                     <label for="name">Nombre:&nbsp;</label>
                     <asp:Textbox runat="server" class="form-control" id="name" placeholder="Enter name"></asp:Textbox>
