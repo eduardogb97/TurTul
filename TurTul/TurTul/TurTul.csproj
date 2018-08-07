@@ -205,10 +205,8 @@
     <Content Include="js\scanner.js" />
     <Content Include="js\zxing.js" />
     <Content Include="PayPal\cancel.aspx" />
-    <Content Include="PayPal\Default.aspx" />
     <Content Include="PayPal\paypal.aspx" />
     <Content Include="PayPal\sendpayment.aspx" />
-    <Content Include="PayPal\thanks.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -273,20 +271,12 @@
       <DependentUpon>cancel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PayPal\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="PayPal\paypal.aspx.cs">
       <DependentUpon>paypal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PayPal\sendpayment.aspx.cs">
       <DependentUpon>sendpayment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PayPal\thanks.aspx.cs">
-      <DependentUpon>thanks.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentador\WLugares.cs" />
