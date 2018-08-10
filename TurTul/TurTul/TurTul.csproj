@@ -146,6 +146,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Formulario\1-col-portfolio.css" />
+    <Content Include="Content\Formulario\bootstrap-theme.css" />
+    <Content Include="Content\Formulario\bootstrap-theme.min.css" />
+    <Content Include="Content\Formulario\bootstrap.css" />
+    <Content Include="Content\Formulario\bootstrap.min.css" />
     <Content Include="Content\Formulario\css\estilos.css" />
     <Content Include="Content\Formulario\css\font-awesome.css" />
     <Content Include="Content\Formulario\fondo.jpg" />
@@ -153,9 +158,12 @@
     <Content Include="Content\Formulario\index.html" />
     <Content Include="Content\Formulario\js\jquery-3.2.1.js" />
     <Content Include="Content\Formulario\js\script.js" />
+    <Content Include="Content\Formulario\Site.css" />
+    <Content Include="Content\Formulario\Valoracion.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Valoracion.css" />
     <Content Include="css\jquery.gmaps.css" />
+    <Content Include="css\Valoracion.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -175,8 +183,19 @@
     <Content Include="Content\Formulario\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\Formulario\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\Formulario\fonts\FontAwesome.otf" />
+    <Content Include="Imagenes\NewTrip.png" />
     <Content Include="Imagenes\índice.png" />
+    <Content Include="js\adapter.min.js" />
+    <Content Include="js\instascan.min.js" />
+    <Content Include="js\jquery-1.8.0.js" />
+    <Content Include="js\jquery-latest.js" />
+    <Content Include="js\localizacion.js" />
+    <Content Include="js\main.js" />
     <Content Include="js\package.json" />
+    <Content Include="Content\Formulario\bootstrap-theme.css.map" />
+    <Content Include="Content\Formulario\bootstrap-theme.min.css.map" />
+    <Content Include="Content\Formulario\bootstrap.css.map" />
+    <Content Include="Content\Formulario\bootstrap.min.css.map" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -203,6 +222,7 @@
     <Content Include="js\jquery.gmaps.js" />
     <Content Include="js\locationpicker.jquery.js" />
     <Content Include="js\scanner.js" />
+    <Content Include="js\vue.min.js" />
     <Content Include="js\zxing.js" />
     <Content Include="PayPal\cancel.aspx" />
     <Content Include="PayPal\paypal.aspx" />
@@ -245,14 +265,19 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Vista\AdministracionNegocios.aspx" />
+    <Content Include="Vista\camara.aspx" />
+    <Content Include="Vista\Encargado.aspx" />
     <Content Include="Vista\Index.aspx" />
     <Content Include="Vista\Lugares.aspx" />
     <Content Include="Vista\LugaresRegistrados.aspx" />
     <Content Include="Vista\Negocios.aspx" />
     <Content Include="Vista\Calificacion.aspx" />
+    <Content Include="Vista\RegistroOfertas.aspx" />
     <Content Include="Vista\RegistroUsuarios.aspx" />
     <Content Include="Vista\Usuario.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
@@ -263,7 +288,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Modelo\CLugares.cs" />
+    <Compile Include="Modelo\COfertas.cs" />
     <Compile Include="Modelo\COrganizacion.cs" />
+    <Compile Include="Modelo\CPremios.cs" />
     <Compile Include="Modelo\CUsuarios.cs" />
     <Compile Include="Modelo\CValoracion.cs" />
     <Compile Include="Modelo\ManagerBD.cs" />
@@ -280,7 +307,9 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Presentador\WLugares.cs" />
+    <Compile Include="Presentador\WOfertas.cs" />
     <Compile Include="Presentador\WOrganizacion.cs" />
+    <Compile Include="Presentador\WPremios.cs" />
     <Compile Include="Presentador\WUsuario.cs" />
     <Compile Include="Presentador\WValoracion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -324,6 +353,20 @@
     <Compile Include="Vista\Calificacion.aspx.designer.cs">
       <DependentUpon>Calificacion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\camara.aspx.cs">
+      <DependentUpon>camara.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\camara.aspx.designer.cs">
+      <DependentUpon>camara.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Encargado.aspx.cs">
+      <DependentUpon>Encargado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Encargado.aspx.designer.cs">
+      <DependentUpon>Encargado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\ILugares.cs" />
     <Compile Include="Vista\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -332,7 +375,9 @@
     <Compile Include="Vista\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\IOfertas.cs" />
     <Compile Include="Vista\IOrganizacion.cs" />
+    <Compile Include="Vista\IPremios.cs" />
     <Compile Include="Vista\IUsuario.cs" />
     <Compile Include="Vista\IValoracion.cs" />
     <Compile Include="Vista\Lugares.aspx.cs">
@@ -355,6 +400,13 @@
     </Compile>
     <Compile Include="Vista\Organizaciones.aspx.designer.cs">
       <DependentUpon>Negocios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\RegistroOfertas.aspx.cs">
+      <DependentUpon>RegistroOfertas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\RegistroOfertas.aspx.designer.cs">
+      <DependentUpon>RegistroOfertas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\RegistroUsuarios.aspx.cs">
       <DependentUpon>RegistroUsuarios.aspx</DependentUpon>

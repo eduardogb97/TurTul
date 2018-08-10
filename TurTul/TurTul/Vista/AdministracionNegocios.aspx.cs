@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TurTul.Modelo;
 
 namespace TurTul.Vista
 {
@@ -23,6 +24,9 @@ namespace TurTul.Vista
 
             }
         }
+
+        public COfertas[] oferta { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         string auxiliar = "";
         WOrganizacion organizacion;
         protected void Page_Load(object sender, EventArgs e)
@@ -32,13 +36,13 @@ namespace TurTul.Vista
         protected COrganizacion Org()
         {
             COrganizacion o = new COrganizacion();
-            o.RFC = auxiliar;
-            o.Nombre = txtNombre.Text;
-            if (IsNumber(txtOferta.Text))
-                o.Oferta = int.Parse(txtOferta.Text);
-            o.TipoOrganizacion = drpTipo.SelectedItem.Text;
-            o.Ubicacion = txtUbicacion.Text;
-            o.QR = txtQr.Text;
+            //o.RFC = auxiliar;
+            //o.Nombre = txtNombre.Text;
+            //if (IsNumber(txtOferta.Text))
+            //    o.Oferta = int.Parse(txtOferta.Text);
+            //o.TipoOrganizacion = drpTipo.SelectedItem.Text;
+            //o.Ubicacion = txtUbicacion.Text;
+            //o.QR = txtQr.Text;
             o.EdoPago = 1;
             o.Contraseña = txtContraseña.Text;
             return o;

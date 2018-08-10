@@ -23,8 +23,8 @@ class Camera {
       video: {
         mandatory: {
           sourceId: this.id,
-          minWidth: 600,
-          maxWidth: 800,
+          minWidth: 100,
+          maxWidth: 200,
           minAspectRatio: 1.6
         },
         optional: []

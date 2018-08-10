@@ -13,6 +13,6 @@ namespace Core.Modelo
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public string Contraseña { get; set; }
-        public string Fk_Lugar { get; set; }
+        public string Usuario { get; set; }
     }
 }

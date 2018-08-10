@@ -28,11 +28,9 @@ namespace Core.Presentador
             lstParametros.Add(new SqlParameter("@IdUsuario", SqlDbType.VarChar, 50) { Value = us.Usuario.IdUsuario });
             lstParametros.Add(new SqlParameter("@Nombre", SqlDbType.VarChar, 50) { Value = us.Usuario.Nombre });
             lstParametros.Add(new SqlParameter("@Apellidos", SqlDbType.VarChar, 50) { Value = us.Usuario.Apellidos });
-            lstParametros.Add(new SqlParameter("@Contraseña", SqlDbType.VarChar, 10) { Value = us.Usuario.Contraseña });
-            lstParametros.Add(new SqlParameter("@Fk_Lugar", SqlDbType.VarChar, 50) { Value = "1" });
+            lstParametros.Add(new SqlParameter("@Contraseña", SqlDbType.VarChar, 30) { Value = us.Usuario.Contraseña });
            
-
-            if (objManagerBD.UpdateData("Usuarios", lstParametros.ToArray()))
+            if (objManagerBD.UpdateData("spUsuarios", lstParametros.ToArray()))
             {
                 return true;
             }
