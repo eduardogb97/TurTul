@@ -31,13 +31,13 @@ namespace camara {
         protected global::System.Web.UI.WebControls.TextBox txtResultado;
         
         /// <summary>
-        /// Control panelMostrar.
+        /// Control PHQRCode.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelMostrar;
+        protected global::System.Web.UI.WebControls.Panel PHQRCode;
         
         /// <summary>
         /// Control lblNombre.
@@ -49,6 +49,15 @@ namespace camara {
         protected global::System.Web.UI.WebControls.Label lblNombre;
         
         /// <summary>
+        /// Control lblHistoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHistoria;
+        
+        /// <summary>
         /// Control lblUbicacion.
         /// </summary>
         /// <remarks>
@@ -58,12 +67,12 @@ namespace camara {
         protected global::System.Web.UI.WebControls.Label lblUbicacion;
         
         /// <summary>
-        /// Control lblTipo.
+        /// Control btnob.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipo;
+        protected global::System.Web.UI.WebControls.Button btnob;
     }
 }

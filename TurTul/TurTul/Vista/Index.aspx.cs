@@ -16,9 +16,20 @@ namespace camara
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Session["totalShoppingAmt"] = 500;
-            Session["orderID"] = string.Format("{0:d7}", (DateTime.Now.Ticks / 10) % 10000000);
-            Response.Redirect("../PayPal/sendpayment.aspx");
+  
+                Session["totalShoppingAmt"] = 500;
+                Session["orderID"] = string.Format("{0:d7}", (DateTime.Now.Ticks / 10) % 10000000);
+                Session["Usuario"] = name.Text;
+                Session["Contraseña"] = pwd.Text;
+                Response.Redirect("../PayPal/sendpayment.aspx");
+            
+        }
+
+        protected void btnIngresar_Click(object sender, EventArgs e)
+        {
+            Session["Usuario"] = name.Text;
+            Session["Contraseña"] = pwd.Text;
+            Response.Redirect("camara.aspx");
         }
     }
 }

@@ -24,13 +24,13 @@
     <title>Control de ubicaciones</title>
 </head>
 <body>
-    <div align="center"> <img width="800px" height="300px" src="../Imagenes/Tutrip.png" /></div>
+    <div align="center"> <img width="800px" height="300px" src="../Imagenes/NewTrip.png" /></div>
     <form id="form1" runat="server">
     <div class="container">
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
-                <label for="exampleInputEmail1">Ubicación</label>
+                <label for="exampleInputEmail1">Dirección:</label>
                 <asp:HiddenField ID="txtID" runat="server" />
                 <asp:TextBox ID="txtUbicacion" CssClass="form-control" runat="server"></asp:TextBox>
             </div>
@@ -41,11 +41,11 @@
             <div class="form-group">
                
                 <div class="col-md-6">
-                 
+                 <asp:Label runat="server">Latitud:</asp:Label>
                 <asp:TextBox ID="txtLat" Text="20.0904802" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
-          
+          <asp:Label runat="server">Longitud:</asp:Label>
                 <asp:TextBox ID="txtLong" Text="-98.3690922" CssClass="form-control" runat="server"></asp:TextBox>
                 <br />
                     
@@ -67,7 +67,7 @@
         </div>
         <div class="col-md-8">
             <br />
-            <h1>Ubicaciones</h1>
+            <h1>Lugares</h1>
             <div style="overflow: scroll;  Height: 600px;">
             <asp:GridView ID="GridViewLugares" runat="server" CssClass="table table-striped table-bordered table-hover" >
                 

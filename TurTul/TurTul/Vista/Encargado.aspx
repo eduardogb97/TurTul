@@ -12,6 +12,21 @@
     <link href="../css/Valoracion.css" rel="stylesheet" />
     <script src="../js/jquery-latest.js"></script>
     <link href="../Content/Formulario/css/estilos.css" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../Content/Formulario/css/estilos.css" rel="stylesheet" />
+    <link href="../Content/Formulario/css/font-awesome.css" rel="stylesheet" />
+    <%--    <script src="../Content/Formulario/js/script.js"></script>--%>
+    <%--    <script src="../Content/Formulario/js/jquery-3.2.1.js"></script>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.css" rel="stylesheet" />--%>
+    <link href="../Content/1-col-portfolio.css" rel="stylesheet" />
+
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsDAIpQKszXH2KS9WvJO-Y4s465ZgS2ak&libraries=places"
+  type="text/javascript"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     <link href="../Content/Formulario/css/font-awesome.css" rel="stylesheet" />
     <meta name="../viewport" content="width=device-width, initial-scale=1.0">
@@ -37,15 +52,23 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
+     <div align="center"> <img src="../Imagenes/NewTrip.png" width="800px" height="300px" src="../Imagenes/NewTrip.png" /></div>
+           <div class="container">
+          <section class="form_wrap">
+
+        <section class="cantact_info">
+            <section class="info_title">
+                <span class="fa fa-university"></span>
+                <h2>Lector<br>QR</h2>
+            </section>
+        </section>
+              <form runat="server" class="form_contact">
+                 <div class="col-md-12">
         <div class="col-md-8">
             <asp:TextBox ID="txtResultado" runat="server"></asp:TextBox>
             <asp:Button ID="btnConsultar" style="visibility:hidden" runat="server" Text="Button" OnClick="btnConsultar_Click" />
-
-            <asp:GridView ID="gvRecompensas" runat="server"></asp:GridView>
+           
         </div>
-        <div class="row">
-            <div class="col-med-5">
                  <div id="app">
       <div  align="center">
         <video id="preview" width="100%"></video>
@@ -56,8 +79,7 @@
             <label v-for="camera in cameras">
              <span v-if="camera.id != activeCameraId" :title="formatName(camera.name)">
               </span>
-            </label>
-          
+            </label>         
         </section>
         <section class="scans">
             <ul hidden="false" v-if="scans.length === 0">
@@ -71,14 +93,36 @@
                             
                   
           </label>
-              </section>          
+              </section>     
+          
+
+
+
+
 
       </div>
 
     </div>
-            </div>
-        </div>
+                     </div>
+
+
+                   <asp:GridView ID="gvRecompensas" CssClass="table table-bordered" runat="server" OnRowDeleting="gvRecompensas_RowDeleting">
+                <Columns>
+                    <asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="Accion" ShowHeader="True" Text="Hacer Descuento" />
+                </Columns>
+            </asp:GridView>
+
+
+                   <div align="right">
+        
+                  <asp:Button runat="server" CssClass="btn btn-default" Width="200px" Text="Regresar" OnClick="Unnamed1_Click"/>
+                        </div>
+         
     </form>
+
+
+
+
 </body>
 <script src="../js/app.js"></script>
 </html>

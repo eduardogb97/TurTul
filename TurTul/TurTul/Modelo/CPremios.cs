@@ -10,5 +10,6 @@ namespace TurTul.Modelo
         public  int FkOferta { get; set; }
     public string FkUsuario { get; set; }
         public DateTime Cadicidad { get; set; }
+        public int IdPremio { get; set; }
     }
 }

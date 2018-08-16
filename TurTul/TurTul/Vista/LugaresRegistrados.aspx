@@ -34,14 +34,14 @@ data-zoom="14" role="map" class="gmaps">
         <asp:Repeater ID="Repeater1" runat="server">
             <ItemTemplate>
 <div
-data-id="<%# DataBinder.Eval(Container.DataItem,"Id_Lugar") %>"
+data-id="<%# DataBinder.Eval(Container.DataItem,"IdLugar") %>"
 data-lat="<%# DataBinder.Eval(Container.DataItem,"Latitud") %>"
 data-lng="<%# DataBinder.Eval(Container.DataItem,"Longitud") %>"
 class="marker">
     <div class="map-card">
         <h1><%# DataBinder.Eval(Container.DataItem,"Nombre") %></h1>
         <p>Dirección: <%# DataBinder.Eval(Container.DataItem,"Ubicacion") %></p>
-        <p>Historia: <%# DataBinder.Eval(Container.DataItem,"Historia") %></p>
+        <p>Descripción: <%# DataBinder.Eval(Container.DataItem,"Descripccion") %></p>
         <p>e-Mail: fake@email.com</p>
        <p class="clasificacion">
   <input id="radio1" type="radio" name="estrellas" value="5">

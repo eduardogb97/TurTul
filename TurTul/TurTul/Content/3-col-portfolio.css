@@ -1,0 +1,38 @@
+/*!
+ * Start Bootstrap - 3 Col Portfolio (https://startbootstrap.com/template-overviews/3-col-portfolio)
+ * Copyright 2013-2018 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-3-col-portfolio/blob/master/LICENSE)
+ */
+
+body {
+    padding-top: 54px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    background-image: url('../Imagenes/pixel_weave.png')!important;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.navbar {
+    font-size: 20px;
+    background-image: url('../Imagenes/pixel_weave.png')!important;
+
+}
+
+.pagination {
+  margin-bottom: 30px;
+}
+
+#nu {
+    background-image: url('../Imagenes/pixel_weave.png');
+    color:black;
+}
+

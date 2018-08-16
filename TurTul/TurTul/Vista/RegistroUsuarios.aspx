@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <div align="center"> <img width="800px" height="300px" src="../Imagenes/Tutrip.png" /></div>
+    <div align="center"> <img width="800px" height="300px" src="../Imagenes/NewTrip.png" /></div>
     <div class="col-md-2"></div>
     <div class="col-md-8">
           <section class="form_wrap">

@@ -53,17 +53,14 @@ namespace TurTul.Vista
         }
         protected void ProcesarMarcador()
         {
-            char[] dir = txtDireccion.Text.ToCharArray();
+            char[] dir = coords.Text.ToCharArray();
             int x = 0;
             for (int i = 0; i < dir.Length; i++)
             {
-                if (dir[i] == '(' || dir[i] == ')')
-                {
-                    dir[i] = ' '; dir[i].ToString().TrimEnd();
-                }
+
                 if (dir[i] == ',')
                 {
-                    x++; dir[i] = ' '; dir[i].ToString().TrimEnd();
+                    x = 1; dir[i] = ' '; dir[i].ToString().TrimEnd();
                 }
 
                 if (x == 0)
@@ -84,11 +81,13 @@ namespace TurTul.Vista
             GenerarQR();
             Session["Id"] = txtFolio.Text;
             Limpiar();
+
             Response.Redirect("RegistroOfertas.aspx");
+            
         }
         private void Limpiar()
         {
-            txtFolio.Text = txtContraseña.Text = txtNegocio.Text = txtUbicacion.Text = txtDireccion.Text = txtContacto.Text = txtDueño.Text = txtUbicacion.Text = "";
+            txtFolio.Text = txtContraseña.Text = txtNegocio.Text = txtUbicacion.Text = txtDireccion.Text = txtContacto.Text = txtDueño.Text  = "";
             longitud.Value = latitud.Value = txtFolio.Text = "";
         }
         private void GenerarQR()
@@ -216,27 +215,22 @@ namespace TurTul.Vista
         protected void btnFolio_Click(object sender, EventArgs e)
         {
 
+            
             for (int i = 0; i < 5; i++)
             {
                 Thread.Sleep(100);
                 int x = new Random(DateTime.Now.Millisecond).Next(0, 9);
                 txtFolio.Text += x;
             }
-            if (organizacion.Existe(3))
+            if (!organizacion.Existe(3))
             {
-                MessageBox.Show("Este numero no es valido");
-
+                btnFolio.Enabled = false;
             }
-            else
-            {
-                MessageBox.Show("Insertar");
-            }
-
         }
 
-        protected void btnAdd_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
+            GenerarQR();
         }
-            
     }
 }

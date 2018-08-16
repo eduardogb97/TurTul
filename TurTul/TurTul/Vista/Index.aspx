@@ -6,9 +6,17 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/3-col-portfolio.css" rel="stylesheet" />
+    <link href="../Content/3-col-portfolio.css" rel="stylesheet" />
 
     <link href="../css/jquery.gmaps.css" rel="stylesheet" />
     <script src="../js/jquery.gmaps.js"></script>
@@ -17,13 +25,44 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <script>
+    <script>
+        var modalConfirm = function (callback) {
+
+            $("#btn-confirm").on("click", function () {
+                $("#mi-modal").modal('show');
+            });
+
+            $("#modal-btn-si").on("click", function () {
+                callback(true);
+                $("#mi-modal").modal('hide');
+            });
+
+            $("#modal-btn-no").on("click", function () {
+                callback(false);
+                $("#mi-modal").modal('hide');
+            });
+        };
+
+        modalConfirm(function (confirm) {
+            if (confirm) {
+                //Acciones si el usuario confirma
+                $("#result").html("CONFIRMADO");
+            } else {
+                //Acciones si el usuario no confirma
+                $("#result").html("NO CONFIRMADO");
+            }
+        });
+
         function post() {
             var boton = document.getElementById('<%=btnReg.ClientID%>');
             boton.click();
         }
+
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
     </script>
     <style>
         .gmaps {
@@ -40,11 +79,11 @@
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="col-md-2 col-sm-12" align="center">
                 <a class="navbar-brand">
-                    <img src="Imagenes/NewTrip.png" width="220px" height="80px" /></a>
+                    <img src="../Imagenes/NewTrip.png" width="220px" height="80px" /></a>
             </div>
             <div class="col-md-10 col-sm-12">
-                <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span><i class="fa fa-th-list" style="font-size:36px;"></i></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span><i class="fa fa-th-list" style="font-size: 36px;"></i></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
@@ -52,36 +91,40 @@
                             <a class="nav-link" href="#" style="color: black;">Inicio</a>
                         </li>
                         <li class="nav-item">
-
-                           <%-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Terminos">
-                                Registrar Empresa
-                            </button>--%>
-                            
-
-                           <input id="btnRegistrarN" type="button" value="Registrar Empresa" class="nav-link" style="color: black;" onclick="post()" />
+                            <button type="button" id="nu" class="btn btn-lg" data-toggle="modal" data-target="#exampleModal">
+                                Registrar Negocio
+                            </button>
 
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="color: black;" href="RegistroUsuarios.aspx">Registro Usuario</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" style="color: black;" href="Encargado.aspx">Encargado</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" style="color: black;" href="Lugares.aspx">Lugares</a>
                         </li>
                     </ul>
 
-            <form class="form-inline" id="form1" runat="server">
-                <asp:Button style="visibility:hidden" ID="btnReg" runat="server" Text="RegistrarEmpresa" OnClick="Button1_Click" />
-               
-                <div class="form-group">
-                    <label for="name">Nombre:&nbsp;</label>
-                    <asp:TextBox runat="server" class="form-control" ID="name" placeholder="Enter name"></asp:TextBox>
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Contraseña:&nbsp;</label>
-                    <asp:TextBox runat="server" type="password" class="form-control" ID="pwd" placeholder="Enter password"></asp:TextBox>
-                </div>
-                <%--                <asp:Button ID="Button1" runat="server" Text="Ingresar" class="btn btn-success" OnClick="Button1_Click" />--%>
-            </form>
+                    <form class="form-inline" id="form1" runat="server">
+                        <asp:Button Style="visibility: hidden" ID="btnReg" runat="server" Text="RegistrarEmpresa" OnClick="Button1_Click" />
+
+                        <div class="form-group">
+                            <label for="name">Nombre:&nbsp;</label>
+                            <asp:TextBox runat="server" class="form-control" ID="name" placeholder="Enter name"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Contraseña:&nbsp;</label>
+                            <asp:TextBox runat="server" type="password" class="form-control" ID="pwd" placeholder="Enter password"></asp:TextBox>
+                        </div>
+                                       <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" class="btn btn-success" OnClick="btnIngresar_Click"/>
+                        <!-- Facebook login or logout button -->
+<a href="javascript:void(0);" onclick="fbLogin()" id="fbLink">
+    <asp:Button ID="Button1" runat="server" Text="Entrar con Facebook" class="btn btn-primary" />
+
+</a>
+                    </form>
 
                 </div>
             </div>
@@ -111,8 +154,6 @@
                     <br />
                 <small>Tulancingo</small>
             </h1>
-
-
 
 
             <div class="row">
@@ -400,28 +441,42 @@
         </section>
     </div>
 
+    <!-- Button trigger modal -->
+
 
     <!-- Modal -->
-    <div class="modal fade" id="Terminos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Aceptar Terminos y Condiciones</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Instrucciones para el registro de un negocio</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    1->La empresa se compromete a pagar mensualmente y esta de acuerdo en cancelar la subscripccion
+                    <asp:Label ID="Label1" Style="color: red;" runat="server" Text="Label">Requisitos para el registro</asp:Label>
+                    <ul>
+                        <li type="circle">Tener una cuenta Paypal para realizar los pagos</li>
+                        <li type="circle">En caso de no tener dirigirse al siguiente enlace <a class="nav-link" style="color: red;" href="https://www.paypal.com/mx/webapps/mpp/account-selection">Paypal</a></li>
+                    </ul>
+                    <asp:Label ID="Label2" Style="color: blue;" runat="server" Text="Label">Registro</asp:Label>
+                    <ul>
+                        <li type="circle">Realizar el pago correspondiente, automaticamente sera redirigido al dar click en aceptar.</li>
+                        <li type="circle">Aceptar los terminos</li>
+                        <li type="circle">Habiendo realizado el pago podra registrar su negocio llenando los datos correspondientes.</li>
+                        <li type="circle">El ultimo paso es registra ofertas para el cliente.</li>
+                    </ul>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="post()">Lei las instrucciones</button>
                 </div>
-
             </div>
         </div>
     </div>
+
+    <div class="alert" role="alert" id="result"></div>
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
@@ -433,6 +488,67 @@
     <!-- Bootstrap core JavaScript -->
     <script src="scripts/bootstrap.bundle.min.js"></script>
     <script src="scripts/jquery.min.js"></script>
+     <script>
+window.fbAsyncInit = function() {
+    // FB JavaScript SDK configuration and setup
+    FB.init({
+        appId: '1894284780876786', // FB App ID
+      cookie     : true,  // enable cookies to allow the server to access the session
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v2.8' // use graph api version 2.8
+    });
+    
+    // Check whether the user already logged in
+    FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+            //display user data
+            getFbUserData();
+            location.href ="camara.aspx";
+        }
+    });
+};
 
+// Load the JavaScript SDK asynchronously
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+// Facebook login with JavaScript SDK
+function fbLogin() {
+    FB.login(function (response) {
+        if (response.authResponse) {
+            // Get and display the user profile data
+            getFbUserData();
+        } else {
+            document.getElementById('status').innerHTML = 'User cancelled login or did not fully authorize.';
+        }
+    }, {scope: 'email'});
+}
+
+// Fetch the user profile data from facebook
+function getFbUserData(){
+    FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
+    function (response) {
+        document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
+        document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
+        document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.first_name + '!';
+        document.getElementById('userData').innerHTML = '<p><b>FB ID:</b> '+response.id+'</p><p><b>Name:</b> '+response.first_name+' '+response.last_name+'</p><p><b>Email:</b> '+response.email+'</p><p><b>Gender:</b> '+response.gender+'</p><p><b>Locale:</b> '+response.locale+'</p><p><b>Picture:</b> <img src="'+response.picture.data.url+'"/></p><p><b>FB Profile:</b> <a target="_blank" href="'+response.link+'">click to view profile</a></p>';
+    });
+}
+
+// Logout from facebook
+function fbLogout() {
+    FB.logout(function() {
+        document.getElementById('fbLink').setAttribute("onclick","fbLogin()");
+        document.getElementById('fbLink').innerHTML = '<img src="fblogin.png"/>';
+        document.getElementById('userData').innerHTML = '';
+        document.getElementById('status').innerHTML = 'You have successfully logout from Facebook.';
+    });
+}
+</script>
 </body>
 </html>

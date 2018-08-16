@@ -19,8 +19,6 @@
 
     <link href="../Content/Formulario/css/font-awesome.css" rel="stylesheet" />
     <meta name="../viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../Content/bootstrap.css" rel="stylesheet" />
-    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
 
     <script>
 
@@ -42,7 +40,8 @@
 </head>
 <body>
     <div align="center"> <img class="img-fluid" width="800px" height="300px" src="../Imagenes/NewTrip.png" /></div>
-           <div class="container">
+        <div class="col-md-2"></div>
+    <div class="col-md-8">
           <section class="form_wrap">
 
         <section class="cantact_info">
@@ -74,9 +73,8 @@
           <label name="scans" tag="ul">
             <label hidden="false" id="texto" v-for="scan in scans" :key="scan.date" :title="scan.content">{{ scan.content }}</label>
               <ul v-if="scans.length > 0">
-
-                                     <input id="Button1" class="btn btn-primary" type="button" value="Ver información" onclick="Operacion();" />
-
+                                     <input id="Button1" class="btn btn-primary" type="button" value="button" onclick="Operacion();" />
+                            
                   
           </label>
               </section>          
@@ -88,12 +86,9 @@
           <div class="col-md-12">
          <asp:Button hidden="false" runat="server" ID="modificar" Text="modificar" OnClick="modificar_Click"/>
          <asp:TextBox hidden="false" ID="txtResultado" runat="server"></asp:TextBox>
-     
+                          <asp:Panel ID="panelMostrar" Visible="false" runat="server">
                              
         <div class="col-md-12">
-            <div class="col-md-4">
-                <asp:Panel ID="PHQRCode" runat="server"></asp:Panel>
-            </div>
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Datos del centro</span>
           </h4>
@@ -102,31 +97,43 @@
               <div>
                 <h6 class="my-0"><asp:Label runat="server" for="TextBox1">Nombre:</asp:Label></h6>
                 <small class="text-muted">
-                    <asp:Label runat="server" Visible="false" ID="lblNombre"></asp:Label>
+                    <asp:Label runat="server" ID="lblNombre"></asp:Label>
                 </small>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <h6 class="my-0"><asp:Label runat="server" for="TextBox1">Histpria:</asp:Label></h6>
-                <small class="text-muted"><asp:Label Visible="false" runat="server" ID="lblHistoria"></asp:Label></small>
+                <h6 class="my-0"><asp:Label runat="server" for="TextBox1">Ubicación:</asp:Label></h6>
+                <small class="text-muted"><asp:Label runat="server" ID="lblUbicacion"></asp:Label></small>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <h6 class="my-0"><asp:Label runat="server" for="TextBox1">Dirección</asp:Label></h6>
-                <small class="text-muted"><asp:Label Visible="false" runat="server" ID="lblUbicacion"></asp:Label></small>
+                <h6 class="my-0"><asp:Label runat="server" for="TextBox1">Tipo de organización:</asp:Label></h6>
+                <small class="text-muted"><asp:Label runat="server" ID="lblTipo"></asp:Label></small>
               </div>
             </li>
           </ul>
-             <div class="col-md-12" align="center">
-         <asp:Button runat="server" ID="btnob" CssClass="btn btn-success" style="width:30%" Text="Obtener premio" OnClick="btnob_Click"/>
-                 </div>
+                <p class="clasificacion">
+  <input id="radio1" type="radio" name="estrellas" value="5">
+  <label for="radio1">★</label>
+  <input id="radio2" type="radio" name="estrellas" value="4">
+  <label for="radio2">★</label>
+  <input id="radio3" type="radio" name="estrellas" value="3">
+  <label for="radio3">★</label>
+  <input id="radio4" type="radio" name="estrellas" value="2">
+  <label for="radio4">★</label>
+  <input id="radio5" type="radio" name="estrellas" value="1">
+  <label for="radio5">★</label>
+           </p>
+         <asp:Button runat="server" Text="Guardar descuento"/>
             </div>
+                              </asp:Panel>
                                   </div>
-                             
+                              
+
                   <div align="right">
-            <asp:Button runat="server" CssClass="btn btn-default" Text="Regresar" Width="200px" OnClick="Unnamed4_Click"/>
+            <asp:Button runat="server" CssClass="btn btn-default" Text="Regresar" Width="200px"/>
         </div>
     </form>
      </section>
@@ -142,6 +149,7 @@
 
 
         </div>
+        <div class="col-md-2"></div>
 
 
 

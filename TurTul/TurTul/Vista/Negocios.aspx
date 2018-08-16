@@ -26,8 +26,8 @@
 
     <style>
         #map {
-            height: 700px;
-            width: 700px;
+            height: 300px;
+            width: 300px;
         }
     </style>
     <script type="text/javascript" language="javascript">
@@ -71,8 +71,8 @@
     <div align="center">
         <img width="800px" height="300px" src="../Imagenes/Tutrip.png" />
     </div>
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
+    <div class="container">
+
         <section class="form_wrap">
 
             <section class="cantact_info">
@@ -81,18 +81,22 @@
                     <h2>Registro<br>
                         empresa</h2>
                 </section>
+                
+
             </section>
             <form action="" runat="server" class="form_contact">
                 <asp:FileUpload ID="FileUpload1" Style="display: none" runat="server" />
                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                 <asp:TextBox Style="visibility: hidden" ID="txtDireccion" runat="server"></asp:TextBox>
-                <asp:HiddenField ID="longitud" runat="server" />
+
+                
+                        <asp:HiddenField ID="longitud" runat="server" />
                 <asp:HiddenField ID="latitud" runat="server" />
+                    
+                
 
                 <asp:Button runat="server" ID="hideButton" Text="" Style="display: none;" OnClick="UploadButton_Click" />
 
-                <div class="row">
-                </div>
                 <div>
                     <asp:Label ID="Label6" type="text" runat="server" Text="Label">Nombre del Negocio</asp:Label>
                     <asp:TextBox ID="txtNegocio" runat="server"></asp:TextBox>
@@ -110,20 +114,16 @@
                     <div class="col-md-12">
                         <asp:Label ID="Label3" runat="server" Text="Label">Tipo de Organizacion</asp:Label>
                         <br />
-                        <asp:DropDownList CssClass="form-control" ID="drpTipo" runat="server" OnSelectedIndexChanged="drpTipo_SelectedIndexChanged" AutoPostBack="true">
+                        <asp:DropDownList CssClass="form-control" ID="drpTipo" runat="server" AutoPostBack="true">
                             <asp:ListItem Value="0">Selecciona</asp:ListItem>
                             <asp:ListItem Value="1">Hotel</asp:ListItem>
                             <asp:ListItem Value="2">Restaurantes</asp:ListItem>
                             <asp:ListItem Value="3">Cafe</asp:ListItem>
                         </asp:DropDownList>
                     </div>
-                    
-                    <div class="col-md-12">
-                       
-                    </div>
                 </div>
                 <div class="row">
-                    <asp:TextBox ID="coords" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="coords" runat="server" style="visibility:hidden"></asp:TextBox>
                 </div>
                 
                 <div class="row">
@@ -133,13 +133,11 @@
                     </div>
                     <div class="col-md-5">
                         <asp:Label ID="Label10" runat="server" Text="Label">Generar: </asp:Label>
-                        <asp:Button ID="btnFolio" runat="server" Text="Generar" CssClass="btn btn-primary" OnClick="btnFolio_Click" />
+                        <asp:Button ID="btnFolio" runat="server" Text="Generar" CssClass="btn btn-primary" OnClick="btnFolio_Click"/>
                     </div>
-                    <div>
                     </div>
 
 
-                </div>
                 <div class="row">
                     <div class="col-md-12">
                         <asp:Label ID="Label1" runat="server" Text="Label">Contraseña</asp:Label>
@@ -165,8 +163,7 @@
 
                 <div class="row">
                     <div class="col-md-8" id="flotante" style="display: none;">
-
-                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <ContentTemplate>
                                 <div class="row">
                                     <div class="col-md-12">
@@ -180,65 +177,24 @@
                                     </div>
                             </ContentTemplate>
                         </asp:UpdatePanel>
+
+                       
                     </div>
+                </div>
+                <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server"  Text="Ver código" OnClick="Button1_Click" />
+                                <div class="col-lg-12" align="center">
+                    <asp:PlaceHolder ID="PHQRCode" runat="server"></asp:PlaceHolder>
                 </div>
 
                 <asp:Button ID="btnGuardar" CssClass="btn btn-primary" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
-                <div class="col-lg-12" align="center">
-                    <asp:PlaceHolder ID="PHQRCode" runat="server"></asp:PlaceHolder>
-                </div>
+
                 <div align="right">
                     <asp:Button runat="server" CssClass="btn btn-default" Text="Regresar" Width="200px" OnClick="Unnamed1_Click" />
                 </div>
-                <div data-backdrop="static" data-keyboard="false" class="modal fade modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Direccion</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        
-                                        <br />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <input type="button" name="name" value="OK" />
-                            </div>
-                        </div>
-                        <!-- Page Content -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-
-
-                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            ...
-                        </div>
-                    </div>
-                </div>
-    </div>
-    </div>
-            </form>
-
-        </section>
-    </div>
-        <div class="col-md-2"></div>
+                
+                  </form>
+            </section>
+        </div>
 </body>
 <script src="../js/main.js"></script>
 <script src="../js/localizacion.js"></script>

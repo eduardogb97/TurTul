@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Windows.Forms;
 using TurTul.Modelo;
 using TurTul.Vista;
 
@@ -41,10 +42,18 @@ namespace TurTul.Presentador
         {
             List<SqlParameter> lstParametros = new List<SqlParameter>();
             lstParametros.Add(new SqlParameter("@Op", SqlDbType.Int) { Value = opcion});
-            lstParametros.Add(new SqlParameter("@FkOferta", SqlDbType.Int) { Value = premio.nuevoPremio.FkOferta });
-            lstParametros.Add(new SqlParameter("@FkUsuario", SqlDbType.VarChar,50) { Value = premio.nuevoPremio.FkUsuario });
-            lstParametros.Add(new SqlParameter("@Caducidad", SqlDbType.Date) { Value = premio.nuevoPremio.Cadicidad });
+            lstParametros.Add(new SqlParameter("@FkUsuario", SqlDbType.Int) { Value = premio.nuevoPremio.FkUsuario });
             premio.setGrid= new ManagerBD().GetData("spPremios", lstParametros.ToArray());
+        }
+        public void Eliminar(int opcion)
+        {
+            List<SqlParameter> lstParametros = new List<SqlParameter>();
+            lstParametros.Add(new SqlParameter("@Op", SqlDbType.Int) { Value = opcion });
+            lstParametros.Add(new SqlParameter("@IdPremio", SqlDbType.Int) { Value = premio.nuevoPremio.IdPremio });           
+            if (new ManagerBD().UpdateData("spPremios", lstParametros.ToArray()))
+            {
+                MessageBox.Show("Realizado");
+            }
         }
     }
 }

@@ -19,10 +19,12 @@
   type="text/javascript"></script>
     <!-- Latest compiled and minified CSS -->
     <script src="../js/locationpicker.jquery.js"></script>
+        <link href="../Content/Formulario/css/estilos.css" rel="stylesheet" />
 
     <title>Control de ubicaciones</title>
 </head>
 <body>
+    <div align="center"> <img width="800px" height="300px" src="../Imagenes/Tutrip.png" /></div>
     <form id="form1" runat="server">
     <div class="container">
     <div class="row">
@@ -60,47 +62,26 @@
             <!-- Controles de altas, bajas y cambios-->
             <div class="form-group">
                 <asp:Button ID="btnAgregar" CssClass="btn btn-success" runat="server" Text="Agregar" UseSubmitBehavior="false" OnClick="Guardar_Click" />
-                 <asp:Button ID="btnModificar" CssClass="btn btn-warning" runat="server" Text="Modificar" UseSubmitBehavior="false" Enabled="false" />
-                 <asp:Button ID="btnEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" UseSubmitBehavior="false" Enabled="false" />
                   <asp:Button ID="btnLimpiar" CssClass="btn btn-default" runat="server" Text="Limpiar" UseSubmitBehavior="false" />
             </div>
         </div>
         <div class="col-md-8">
             <br />
             <h1>Ubicaciones</h1>
-            <asp:GridView ID="GridViewLugares" runat="server" CssClass="table table-striped table-bordered table-hover" OnRowCommand="GridView1_OnRowCommand">
-                <Columns>
-                    <asp:TemplateField ShowHeader="False" HeaderText="Cancelación">
-                                <ItemTemplate>
-                                    <asp:Button ID="btnEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" UseSubmitBehavior="false"  />
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                </Columns>
+            <div style="overflow: scroll;  Height: 600px;">
+            <asp:GridView ID="GridViewLugares" runat="server" CssClass="table table-striped table-bordered table-hover" >
+                
                  
         </asp:GridView>
+                </div>
         </div>
     </div>
-<!-- Modal -->
-<div class="modal fade" id="ModalEliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Esta seguro de eliminar el lugar ?
-            </div>
-            <div class="modal-footer">
-                <asp:TextBox ID="txtIdLugar" runat="server" Visible="false" Enabled="false"></asp:TextBox>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Eliminar</button>
-                <asp:Button ID="btnEliminarLugar" runat="server" Text="Eliminar " CssClass="btn btn-danger" OnClick="btnnEliminarLugar_Click" />
-            </div>
-        </div>
-    </div>
-</div>
+
+        <br />
+         <div align="right">
+        
+                  <asp:Button runat="server" CssClass="btn btn-default" Width="200px" Text="Regresar" OnClick="Unnamed1_Click"/>
+                        </div>
     </form>
     <script>
         $('#ModalMapPreview').locationpicker({

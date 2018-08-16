@@ -9,6 +9,7 @@
  
     <link href="../css/jquery.gmaps.css" rel="stylesheet" />
     <script src="../js/jquery.gmaps.js"></script>
+    <link href="../Content/Valoracion.css" rel="stylesheet" />
 
 <%--    <style>
         .gmaps{
@@ -42,6 +43,18 @@ class="marker">
         <p>Dirección: <%# DataBinder.Eval(Container.DataItem,"Ubicacion") %></p>
         <p>Historia: <%# DataBinder.Eval(Container.DataItem,"Historia") %></p>
         <p>e-Mail: fake@email.com</p>
+       <p class="clasificacion">
+  <input id="radio1" type="radio" name="estrellas" value="5">
+  <label for="radio1">★</label>
+  <input id="radio2" type="radio" name="estrellas" value="4">
+  <label for="radio2">★</label>
+  <input id="radio3" type="radio" name="estrellas" value="3">
+  <label for="radio3">★</label>
+  <input id="radio4" type="radio" name="estrellas" value="2">
+  <label for="radio4">★</label>
+  <input id="radio5" type="radio" name="estrellas" value="1">
+  <label for="radio5">★</label>
+           </p>
     </div>
 </div></ItemTemplate>
         </asp:Repeater>

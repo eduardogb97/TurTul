@@ -50,7 +50,7 @@ google.maps.event.addDomListener(window, "load", function () {
             }
             if (place.geometry.viewport) {
                 mapa.fitBounds(place.geometry.viewport);
-                mapa.setZoom(15);
+
             }
             else {
                 mapa.setCenter(place.geometry.location);
@@ -71,7 +71,7 @@ google.maps.event.addDomListener(window, "load", function () {
         geocoder.geocode({ 'location': latlng }, function (results, status) {
             if (status === 'OK') {
                 if (results[0]) {
-
+                    map.setZoom(10);
                     marcador = new google.maps.Marker({
                         position: latlng,
                         map: map,

@@ -82,5 +82,10 @@ namespace TurTul.Vista
             producto = drpOpcciones.SelectedItem.Text;
             ofertas.RegistrarOfertas(1);
         }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
+        }
     }
 }
